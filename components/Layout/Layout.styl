@@ -24,11 +24,6 @@ body {
         top: 0;
         width: 100%;
         text-align: center;
-        color: #fff;
-
-        @media (max-width: $small-screen) {
-            background-color: #fff;
-        }
     }
 
     &--content {
@@ -48,6 +43,8 @@ body {
         @media (max-width: $small-screen) {
             display: none;
         }
+
+        color: #fff;
     }
 
     &--headerRow {
@@ -77,18 +74,15 @@ body {
         @media (min-width: $small-screen + 1) {
             display: none;
         }
-
-        padding: 20px 12px;
-        color: #333;
-        box-shadow: 0 5px 10px alpha(#000, 0.5);
     }
 
     &--drawerButton {
         $size = 48px;
 
         position: absolute;
-        left: 0;
-        bottom: 0;
+        z-index: 1;
+        top: 14px;
+        left: 14px;
         width: $size;
         height: $size;
         border-radius: $size;
@@ -98,5 +92,21 @@ body {
         &:hover {
             background-color: $highlighed-green-color;
         }
+    }
+
+    &--headerContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 74px 12px 20px;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 5px 10px alpha(#000, 0.5);
+        transform: translateY(0%);
+        transition: transform 0.2s;
+    }
+
+    &--header.-hidden &--headerContent {
+        transform: translateY(-100%);
     }
 }

@@ -10,6 +10,11 @@ class Layout extends React.Component {
         content: PropTypes.object.isRequired
     }
 
+    toggleHeaderContent = () => {
+        var headerNode = React.findDOMNode(this.refs.header);
+        headerNode.classList.toggle('-hidden');
+    }
+
     render() {
         return (
             <div className="Layout">
@@ -27,15 +32,19 @@ class Layout extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="Layout-mobile--header">
-                    <div className="Layout-mobile--drawerButton"></div>
-                    <div className="Layout-mobile--profile">
-                        {this.context.user.name}
-                    </div>
-                    <div className="Layout-desktop--actionButton">
-                        <Button className="Button" url="/">
-                            Action!
-                        </Button>
+                <div className="Layout-mobile--header -hidden"
+                    ref="header">
+                    <div className="Layout-mobile--drawerButton"
+                        onClick={this.toggleHeaderContent}></div>
+                    <div className="Layout-mobile--headerContent">
+                        <div className="Layout-mobile--profile">
+                            {this.context.user.name}
+                        </div>
+                        <div className="Layout-desktop--actionButton">
+                            <Button className="Button" url="/">
+                                Action!
+                            </Button>
+                        </div>
                     </div>
                 </div>
                 <div className="Layout--content">
