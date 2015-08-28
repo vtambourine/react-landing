@@ -20,7 +20,6 @@ class BillboardPanel extends React.Component {
                     <div className="BillboardPanel--subtitle">
                         {this.context.content.slogan}
                     </div>
-                    <Button className="Button-large" url="/">Watch</Button>
                 </div>
             </div>
         );

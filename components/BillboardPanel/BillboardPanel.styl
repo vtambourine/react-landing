@@ -11,20 +11,19 @@
     background-color: green;
     background-image url('./background.jpg');
     background-size: cover;
-    background-position: top center;
+    background-position: bottom center;
     background-repeat: no-repeat;
-
-    @media (max-width: $medium-screen) {
-        background-image url('./background-mobile.jpg');
-    }
 
     @media (max-width: $small-screen) {
         padding-top: 64px;
     }
 
     &--content {
-        display: table-cell;
-        vertical-align: middle;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
         padding: 0 30px;
 
         @media (max-width: $small-screen) {
@@ -33,13 +32,24 @@
     }
 
     &--title {
-        font: 400 46px/1.2 $title-font;
+        font: 900 90px/1.2 'Maven Pro';
+        display: flex;
+        align-items: center;
+        flex-grow: 2;
         max-width: 800px;
-        margin: 0 auto 60px;
-        text-shadow: $text-shadow;
+        text-transform: uppercase;
+        color: #B70101;
 
-        @media (max-width: $medium-screen) {
+        buf =,;
+        for i in (-3..3) {
+            for j in (-3..3) {
+                push(buf, (i * 1px) (j * 1px) 0 #FFE761);
+            }
         }
+        shift(buf);
+        shift(buf);
+
+        text-shadow: buf
 
         @media (max-width: $small-screen) {
             font-size: 28px;
@@ -48,12 +58,11 @@
     }
 
     &--subtitle {
-        subtitle();
-        font: 400 28px/1.2 $subtitle-font;
-        color: $golden-color;
+        font: 500 36px/1.2 'Maven Pro';
+        flex-grow: 1;
         max-width: 650px;
-        margin: 0 auto 62px;
-        text-shadow: $text-shadow;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.8);
 
         @media (max-width: $small-screen) {
             font-size: 22px;

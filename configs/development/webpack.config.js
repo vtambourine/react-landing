@@ -15,7 +15,7 @@ export default {
     output: {
         path: OUTPUT_PATH,
         filename: '[name].js',
-        publicPath: 'http://' + appConfig.devServer.host + ':' + appConfig.devServer.port + appConfig.devServer.publicPath,
+        publicPath: appConfig.static.url,
         library: "Page",
         libraryTarget: "var"
     },

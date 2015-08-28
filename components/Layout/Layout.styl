@@ -7,10 +7,6 @@ body {
     display: flex;
 }
 
-header() {
-
-}
-
 .Layout {
     position: relative;
     width: 100%;
@@ -24,25 +20,34 @@ header() {
         text-align: center;
         color: #fff;
 
-        @media (max-width: $medium-screen) {
+        @media (max-width: $small-screen) {
             background-color: #fff;
         }
+    }
 
-        &.-desktop {
-            @media (max-width: $medium-screen) {
-                display: none;
-            }
+    &--content {
+        width: 100%;
+        height: 100%;
+
+        @media (max-width: $small-screen) {
+            min-height: 0;
         }
+    }
+}
 
-        &.-mobile {
-            @media (min-width: $medium-screen + 1) {
-                display: none;
-            }
+.Layout-desktop {
+    @extend .Layout;
+
+    &--header {
+        @media (max-width: $small-screen) {
+            display: none;
         }
     }
 
     &--headerRow {
-        display: table;
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
         width: 100%;
         max-width: $max-width;
         margin: 0 auto;
@@ -50,23 +55,21 @@ header() {
     }
 
     &--headerItem {
-        display: table-cell;
-        vertical-align: middle;
-        width: 25%;
+        padding: 0 20px;
         text-align: center;
     }
 
     &--profile {
         display: inline-block;
     }
+}
 
-    &--content {
-        width: 100%;
-        height: 100%;
-        min-height: 540px;
+.Layout-mobile {
+    @extend .Layout;
 
-        @media (max-width: $medium-screen) {
-            min-height: 0;
+    &--header {
+        @media (min-width: $small-screen + 1) {
+            display: none;
         }
     }
 }

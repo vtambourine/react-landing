@@ -13,22 +13,22 @@ class Layout extends React.Component {
     render() {
         return (
             <div className="Layout">
-                <div className="Layout--header -desktop">
-                    <div className="Layout--headerRow">
-                        <div className="Layout--headerItem">
+                <div className="Layout-desktop--header">
+                    <div className="Layout-desktop--headerRow">
+                        <div className="Layout-desktop--headerItem">
+                            <div className="Layout-desktop--profile">
+                                {this.context.user.name}
+                            </div>
+                        </div>
+                        <div className="Layout-desktop--headerItem">
                             <Button className="Button" url="/">
                                 Action!
                             </Button>
                         </div>
-                        <div className="Layout--headerItem">
-                            <div className="Layout--profile">
-                                {this.context.user.name}
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div className="Layout--header -mobile">
-                    <div className="Layout--profile">
+                <div className="Layout-mobile--header">
+                    <div className="Layout-mobile--profile">
                         {this.context.user.name}
                     </div>
                 </div>
