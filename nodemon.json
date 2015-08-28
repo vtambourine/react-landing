@@ -1,0 +1,12 @@
+{
+    "verbose": true,
+    "watch": [
+        "client/",
+        "components",
+        "server/",
+        "configs/"
+    ],
+    "ignore": [
+        "*.styl"
+    ]
+}

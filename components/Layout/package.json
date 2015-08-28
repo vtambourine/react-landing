@@ -1,0 +1,9 @@
+{
+  "name": "Layout",
+  "main": "./Layout.js",
+  "dependencies": {
+    "autoprefixer": "^5.2.0",
+    "autoprefixer-core": "^5.2.1",
+    "postcss-loader": "^0.5.1"
+  }
+}

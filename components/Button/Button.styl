@@ -1,0 +1,58 @@
+@require('../variables');
+
+.Button {
+    font: 400 18px/1.4 Roboto, Helvetica, Arial, sans-serif;
+    display: inline-block;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #ffce44, #ffc12f);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    color: $dark-text-color;
+    cursor: pointer;
+
+    &:hover {
+        background: linear-gradient(to bottom, #eab100, #e49e00);
+    }
+
+    @media (max-width: $small-screen) {
+        font-size: 15px;
+    }
+
+    &-large {
+        font-weight: 500;
+        border-radius: 5px;
+    }
+
+    &-flat {
+        color: #fff;
+        border: 2px white solid;
+        border-radius: 5px;
+        box-shadow: none;
+        background: none;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    &--control {
+        display: block;
+        padding: 12px 20px;
+        color: inherit;
+
+        &, &:focus, &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    &-large &--control {
+        display: block;
+        padding: 21px 65px;
+
+        @media (max-width: $small-screen) {
+            padding: 21px;
+        }
+    }
+}
