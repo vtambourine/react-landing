@@ -22,9 +22,7 @@ class FuturamaPage extends React.Component {
         return (
             <Layout>
                 <div className="FuturamaPage">
-                    <BillboardPanel
-                        title="Квартирные переезды"
-                        slogan="С нами 100500 перевозчиков" />
+                    <BillboardPanel />
                 </div>
             </Layout>
         );

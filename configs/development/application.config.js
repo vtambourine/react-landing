@@ -14,7 +14,6 @@ export default {
         'https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-beta1/react.js'
     ],
     styles: [
-        'https://fonts.googleapis.com/css?family=Maven+Pro:400,500,900',
-        'http://yastatic.net/bootstrap/3.3.1/css/bootstrap.min.css'
+        'https://fonts.googleapis.com/css?family=Maven+Pro:400,500,900'
     ]
 };

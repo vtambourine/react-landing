@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Button from '../Button';
+import Button from 'Button';
 
 import './Layout.styl';
 
@@ -28,8 +28,14 @@ class Layout extends React.Component {
                     </div>
                 </div>
                 <div className="Layout-mobile--header">
+                    <div className="Layout-mobile--drawerButton"></div>
                     <div className="Layout-mobile--profile">
                         {this.context.user.name}
+                    </div>
+                    <div className="Layout-desktop--actionButton">
+                        <Button className="Button" url="/">
+                            Action!
+                        </Button>
                     </div>
                 </div>
                 <div className="Layout--content">

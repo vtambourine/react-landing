@@ -63,10 +63,6 @@ export default {
         }),
         function () {
             this.plugin('done', (stats) => {
-                // var ws = fs.openSync(path.join(cwd, 'webpack-stats.json'), 'w+');
-                // fs.writeSync(ws, JSON.stringify(stats.toJson()));
-                // fs.closeSync(ws);
-
                 console.log(stats.toString({
                     chunks: false,
                     colors: true

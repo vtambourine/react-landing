@@ -4,14 +4,15 @@
     font: 400 18px/1.4 Roboto, Helvetica, Arial, sans-serif;
     display: inline-block;
     border-radius: 3px;
-    background: linear-gradient(to bottom, #ffce44, #ffc12f);
+    background: $green-color;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
     color: $dark-text-color;
     cursor: pointer;
+    transition: background-color 0.2s;
 
     &:hover {
-        background: linear-gradient(to bottom, #eab100, #e49e00);
+        background: $highlighed-green-color;
     }
 
     @media (max-width: $small-screen) {

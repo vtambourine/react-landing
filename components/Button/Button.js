@@ -27,9 +27,18 @@ class Button extends React.Component {
     }
 
     render() {
-        var content = this.props.url
-            ? content = <a className="Button--control" href={this.props.url}>{this.props.label || this.props.children}</a>
-            : content = <span className="Button--control">{this.props.label || this.props.children}</span>;
+        var content;
+        if (this.props.url) {
+            content =
+                <a className="Button--control" href={this.props.url}>
+                    {this.props.label || this.props.children}
+                </a>;
+        } else {
+            content =
+                <span className="Button--control">
+                    {this.props.label || this.props.children}
+                </span>;
+        }
 
         return (
             <div className={classNames('Button', this.props.className)}
