@@ -1,10 +1,10 @@
 require('babel/register');
 
-require.extensions['.styl'] = function () {
-    return '';
-};
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-require.extensions['.css'] = function () {
+// Substitude all node imports of `styl` modules to support both webpack
+// styles requires and server rendering of components.
+require.extensions['.styl'] = function () {
     return '';
 };
 
@@ -12,7 +12,10 @@ var app = require('./server');
 var debug = require('debug')('landing-kit:server');
 var http = require('http');
 
-require('./server/bundler');
+// Start bundler.
+// This will build static assets once for production environment
+// or run Webpack Dev Server to serve static for development.
+// require('./server/bundler');
 
 // Get port from environment and store in Express.
 var port = process.env.PORT || 3000;

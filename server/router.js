@@ -1,4 +1,3 @@
-import path from 'path';
 import express from 'express';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
@@ -22,7 +21,7 @@ router.use('/:page', (req, res, next) => {
     var componentName = page[0].toUpperCase() + page.slice(1) + 'Page';
 
     // In development mode use fixture data to populate template context.
-    // TODO: Send POST-data on production build locally.
+    // TODO: Figure out how to test production builds on fixture data.
     // if (process.env.NODE_ENV === 'development') {
         var fixture = require(`../tests/fixtures/${page}`);
         data = Object.assign({}, fixture, data);
@@ -37,10 +36,6 @@ router.use('/:page', (req, res, next) => {
             '<!doctype html>' +
             ReactDOM.renderToStaticMarkup(<Page
                 data={data}
-                meta={data.meta}
-                title={data.title}
-                analytics={new Buffer(data.analytics || '', 'base64').toString()}
-                jivosite={new Buffer(data.jivosite || '', 'base64').toString()}
                 styles={styles}
                 scripts={scripts}
                 body={body} />);

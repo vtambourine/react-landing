@@ -23,13 +23,13 @@ class Page extends React.Component {
             <html>
             <head>
                 <meta charSet="utf-8" />
-                <meta name="keywords" content={this.props.meta.keywords} />
-                <meta name="description" content={this.props.meta.description} />
+                <meta name="keywords" content={this.props.data.meta.keywords} />
+                <meta name="description" content={this.props.data.meta.description} />
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
-                <title>{this.props.title}</title>
+                <title>{this.props.data.title}</title>
 
                 {this.props.styles.map((style, key) => <link rel="stylesheet" href={style} key={key} /> )}
             </head>

@@ -23,7 +23,6 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cookieParser());
 server.use(express.static(PUBLIC_DIR));
-// server.use(express.static(path.join(process.cwd(), 'build')));
 server.use('/assets', express.static(path.join(process.cwd(), 'build')));
 
 server.get('/', (req, res) => {
@@ -31,6 +30,8 @@ server.get('/', (req, res) => {
     res.end('Hello, World!');
 });
 
+// Store global lists of static files in the request.
+// Later this lists will be pupulated by build results.
 server.use((request, response, next) => {
     request.assets = {
         scripts: [].concat(appConfig.scripts),
@@ -39,9 +40,15 @@ server.use((request, response, next) => {
     next();
 });
 
+// Enable bundler.
+// This will build static assets once for production environment
+// or run Webpack Dev Server to serve static for development.
 var bundler = require('./bundler.js');
 server.use(bundler());
 
+// Enable router.
+// Router is responsible for decision which page component will be used
+// as a root for certain request.
 server.use(router);
 
 server.use((req, res, next) => {
